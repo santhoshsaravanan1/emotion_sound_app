@@ -4,7 +4,7 @@ import freesound   # from freesound-api
 
 # Initialize client
 FS_CLIENT = freesound.FreesoundClient()
-API_KEY = os.getenv("FREESOUND_API_KEY")
+API_KEY = os.getenv("bnvLHj0a3oBdWCUyfY61Rds7SINt4cntex3UBI5n")
 if not API_KEY:
     st.error("Please set FREESOUND_API_KEY env var")
     st.stop()
