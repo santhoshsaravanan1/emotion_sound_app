@@ -11,16 +11,17 @@ if not API_KEY:
 FS_CLIENT.set_token(API_KEY, "token")
 
 st.title("🎧 Emotion‑Based Sound Player")
-st.write("Enter an emotion (e.g. “happy”, “sad”, “calm”) to find a matching sound.")
+st.write("Enter an emotion (e.g. 'happy', 'sad', 'calm') to find a matching sound.")
 
 emotion = st.text_input("Emotion", placeholder="happy")
 
 def play_looping_audio(url: str):
-    html = f """
+    html = f"""
     <audio autoplay loop>
       <source src="{url}" type="audio/mp3">
       Your browser does not support the audio element.
-    </audio>"""
+    </audio>
+    """
     st.markdown(html, unsafe_allow_html=True)
 
 if st.button("Play Sound") and emotion:
