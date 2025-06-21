@@ -32,6 +32,6 @@ if st.button("Play Sound") and emotion:
             st.warning("😞 No sounds found. Try another emotion.")
         else:
             sound = results[0]
-            preview_url = sound.previews.get("preview-hq-mp3") or sound.previews.get("preview-lq-mp3")
+            preview_url = getattr(sound.previews, 'preview_hq_mp3', None) or getattr(sound.previews, 'preview_lq_mp3', None)
             st.subheader(f"🎵 {sound.name}  — by {sound.username}")
             st.audio(preview_url, format="audio/mp3")
